@@ -10,11 +10,14 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class OrderReceiptTest {
     @Test
     public void shouldPrintCustomerInformationOnOrder() {
+//        given
         Order order = new Order("Mr X", "Chicago, 60601", new ArrayList<LineItem>());
         OrderReceipt receipt = new OrderReceipt(order);
 
+//        when
         String output = receipt.printReceipt();
 
+//        then
         assertThat(output).contains("Mr X", "Chicago, 60601");
     }
 
